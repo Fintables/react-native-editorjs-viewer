@@ -37,13 +37,12 @@
     "!**/.*"
   ],
   "scripts": {
-    "postinstall": "patch-package",
     "example": "yarn workspace react-native-editorjs-viewer-example",
     "test": "jest",
     "typecheck": "tsc",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
     "clean": "del-cli lib",
-    "prepare": "bob build",
+    "prepare": "patch-package && bob build",
     "release": "release-it"
   },
   "keywords": [
