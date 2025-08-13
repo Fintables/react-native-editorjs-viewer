@@ -57,7 +57,6 @@ const App = () => {
 - Table
 - Warning
 - Checklist
-- Code
 - Raw HTML
 
 ## Customization
@@ -74,8 +73,8 @@ You can customize the appearance of each component by passing style props:
     // ... other component styles
   }}
   componentProps={{
-    code: {
-      showLineNumbers: true,
+    raw: {
+      contentWidth: Dimensions.get('window').width,
     },
     // ... other component props
   }}

@@ -10,11 +10,8 @@ import type { IListProps } from './components/list';
 import type { ITableProps } from './components/table';
 import type { IWarningProps } from './components/warning';
 import type { ICheckListProps } from './components/checkList';
-import type { ICodeProps } from './components/code';
-import type { ReactStyle } from 'react-native-code-highlighter/dist/typescript/utils/styles';
 import type { IRawProps } from './components/raw';
 import type { RenderHTMLProps } from 'react-native-render-html';
-import type { CodeHighlighterProps } from 'react-native-code-highlighter/src/lib/CodeHighlighter';
 
 export interface IEditorJsData {
   version?: string;
@@ -63,7 +60,6 @@ export type EditorJsViewerProps = {
     Table?: React.ComponentType<ITableProps>;
     Warning?: React.ComponentType<IWarningProps>;
     CheckList?: React.ComponentType<ICheckListProps>;
-    Code?: React.ComponentType<ICodeProps>;
     Raw?: React.ComponentType<IRawProps>;
   };
   customComponents?: IComponentObject;
@@ -143,17 +139,12 @@ export type EditorJsViewerProps = {
       containerStyle?: ViewProps['style'];
       codeContainerStyle?: ViewProps['style'];
       codeTextStyle?: TextProps['style'];
-      hljsStyle?: ReactStyle;
     };
     raw?: {
       containerStyle?: ViewProps['style'];
     };
   };
   componentProps?: {
-    code?: Omit<
-      CodeHighlighterProps,
-      'containerStyle' | 'textStyle' | 'language' | 'style'
-    >;
     raw?: Omit<RenderHTMLProps, 'source' | 'contentWidth'>;
     table?: Pick<ITableProps, 'flatListProps' | 'textProps'>;
     linkTool?: Pick<

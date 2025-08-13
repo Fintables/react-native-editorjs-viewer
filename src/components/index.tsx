@@ -9,7 +9,6 @@ import ListComponent from './list';
 import TableComponent from './table';
 import WarningComponent from './warning';
 import CheckListComponent from './checkList';
-import CodeComponent from './code';
 import RawComponent from './raw';
 
 export {
@@ -24,6 +23,5 @@ export {
   TableComponent,
   WarningComponent,
   CheckListComponent,
-  CodeComponent,
   RawComponent,
 };

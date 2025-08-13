@@ -1,6 +1,6 @@
 {
   "name": "@fintables/react-native-editorjs-viewer",
-  "version": "0.1.4",
+  "version": "0.1.6",
   "description": "A React Native component for rendering Editor.js content, supporting various block types with customizable styling.",
   "source": "./src/index.tsx",
   "main": "./lib/commonjs/index.js",
@@ -42,7 +42,7 @@
     "typecheck": "tsc",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
     "clean": "del-cli lib",
-    "prepare": "patch-package && bob build",
+    "prepare": "bob build",
     "release": "release-it"
   },
   "keywords": [
@@ -70,14 +70,12 @@
     "@release-it/conventional-changelog": "^5.0.0",
     "@types/jest": "^29.5.5",
     "@types/react": "^18.2.44",
-    "@types/react-syntax-highlighter": "^15.5.13",
     "commitlint": "^17.0.2",
     "del-cli": "^5.1.0",
     "eslint": "^8.51.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.1",
     "jest": "^29.7.0",
-    "patch-package": "^8.0.0",
     "prettier": "^3.0.3",
     "react": "18.2.0",
     "react-native": "0.74.5",
@@ -187,8 +185,6 @@
   },
   "dependencies": {
     "html-entities": "^2.5.2",
-    "react-native-code-highlighter": "^1.2.3",
-    "react-native-render-html": "^6.3.4",
-    "react-syntax-highlighter": "^15.5.0"
+    "react-native-render-html": "^6.3.4"
   }
 }

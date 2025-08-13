@@ -15,7 +15,6 @@ import {
   TableComponent,
   WarningComponent,
   CheckListComponent,
-  CodeComponent,
   RawComponent,
 } from '../components';
 
@@ -38,7 +37,6 @@ function useComponentMap(
     const Table = components?.Table || TableComponent;
     const Warning = components?.Warning || WarningComponent;
     const CheckList = components?.CheckList || CheckListComponent;
-    const Code = components?.Code || CodeComponent;
     const Raw = components?.Raw || RawComponent;
 
     return {
@@ -537,23 +535,6 @@ function useComponentMap(
                 componentStyles?.checklist?.checkListItem?.linkTextStyle,
               ],
             }}
-          />
-        );
-      },
-      code: ({ block, containerStyle }: IComponentBlockProps) => {
-        return (
-          <Code
-            data={block.data}
-            containerStyle={[
-              containerStyle,
-              componentStyles?.code?.containerStyle,
-            ]}
-            codeContainerStyle={componentStyles?.code?.codeContainerStyle}
-            codeTextStyle={[
-              defaultStyles?.textStyle,
-              componentStyles?.code?.codeTextStyle,
-            ]}
-            {...componentProps?.code}
           />
         );
       },
