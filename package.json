@@ -1,6 +1,6 @@
 {
   "name": "@fintables/react-native-editorjs-viewer",
-  "version": "0.1.6",
+  "version": "0.1.5",
   "description": "A React Native component for rendering Editor.js content, supporting various block types with customizable styling.",
   "source": "./src/index.tsx",
   "main": "./lib/commonjs/index.js",
@@ -15,6 +15,26 @@
       "require": {
         "types": "./lib/typescript/commonjs/src/index.d.ts",
         "default": "./lib/commonjs/index.js"
+      }
+    },
+    "./components": {
+      "import": {
+        "types": "./lib/typescript/module/src/components/index.d.ts",
+        "default": "./lib/module/components/index.js"
+      },
+      "require": {
+        "types": "./lib/typescript/commonjs/src/components/index.d.ts",
+        "default": "./lib/commonjs/components/index.js"
+      }
+    },
+    "./types": {
+      "import": {
+        "types": "./lib/typescript/module/src/types.d.ts",
+        "default": "./lib/module/types.js"
+      },
+      "require": {
+        "types": "./lib/typescript/commonjs/src/types.d.ts",
+        "default": "./lib/commonjs/types.js"
       }
     }
   },

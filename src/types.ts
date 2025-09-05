@@ -162,3 +162,18 @@ export interface IComponentBlockProps<T extends object = any> {
 export type IComponentObject = {
   [key: string]: (param: IComponentBlockProps) => ReactElement;
 };
+
+export type {
+  IParagraphProps,
+  IHeaderProps,
+  IDelimiterProps,
+  IImageProps,
+  ILinkToolProps,
+  IQuoteProps,
+  IListProps,
+  ITableProps,
+  IWarningProps,
+  ICheckListProps,
+  IRawProps,
+  RenderHTMLProps,
+};
