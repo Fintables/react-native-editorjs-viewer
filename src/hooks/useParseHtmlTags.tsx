@@ -122,17 +122,21 @@ const useParseHtmlTags = ({
 
       const props = firstMatchTag[0].match(/ (.*?)>/)?.[1];
 
-      const propsMap: Record<string, any> =
-        props?.split(' ').reduce((acc, curr) => {
-          const [key, val] = curr.split('=');
+      const propsMap: Record<string, any> = {};
 
-          if (!key || !val) return acc;
+      if (props) {
+        const attrRegex =
+          /([\w:-]+)\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s"'>]+))/g;
+        let attrMatch: RegExpExecArray | null;
 
-          return {
-            ...acc,
-            [key]: val.replace(/"/g, ''),
-          };
-        }, {}) ?? {};
+        while ((attrMatch = attrRegex.exec(props)) !== null) {
+          const [, key, doubleQuoted, singleQuoted, unquoted] = attrMatch;
+          if (!key) continue;
+          propsMap[key] = decode(
+            doubleQuoted ?? singleQuoted ?? unquoted ?? ''
+          );
+        }
+      }
 
       const closeTag = stringAfterTargetTag.match(new RegExp(`</${tagName}>`));
 
